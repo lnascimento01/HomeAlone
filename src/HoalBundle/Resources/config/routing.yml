@@ -1,0 +1,11 @@
+login_route:
+    path:     /login
+    defaults: { _controller: HoalBundle:Security:login }
+
+login_check:
+    path: /login_check
+
+loged_area:
+    path: /admin/logged
+    defaults: { _controller: HoalBundle:Teste:index }
+    
