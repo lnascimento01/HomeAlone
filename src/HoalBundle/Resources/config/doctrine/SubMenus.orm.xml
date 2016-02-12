@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity name="HoalBundle\Entity\SubMenus" table="sub_menus">
+    <indexes>
+      <index name="id_menu" columns="id_menu"/>
+    </indexes>
     <unique-constraints>
       <unique-constraint name="ID" columns="ID"/>
     </unique-constraints>
@@ -22,5 +25,10 @@
         <option name="unsigned"/>
       </options>
     </field>
+    <many-to-one field="idMenu" target-entity="Menus" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_menu" referenced-column-name="ID"/>
+      </join-columns>
+    </many-to-one>
   </entity>
 </doctrine-mapping>

@@ -5,6 +5,7 @@ namespace HoalBundle\Controller;
 use HoalBundle\Entity\Menus;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use HoalBundle\Controller\Engines;
 
 class TesteController extends Controller {
 
@@ -15,37 +16,34 @@ class TesteController extends Controller {
 
         $em = $this->get('doctrine')->getManager();
         $menusRepo = $em->getRepository('HoalBundle:Menus');
-        $subMenusRepo = $em->getRepository('HoalBundle:SubMenu');
+        $subMenusRepo = $em->getRepository('HoalBundle:SubMenus');
         $menus = $menusRepo->findAll();
         $subMenus = $subMenusRepo->findAll();
+        
+        $engines = new Engines();
 
-        $result = [];
-
-        $result[] = $this->buildMenu($menus, $subMenus);
-        echo "<pre>";
-        print_r($result);
-        echo "</pre>";
-        exit();
-
-        $urlRoot = '//' . $_SERVER['SERVER_NAME'];
+//        $result[] = $this->buildMenu($menus, $subMenus);
+        $urlRoot = $engines->urlRoot;
 
         return $this->render('HoalBundle:Default:teste.html.twig', array(
                     'root' => $urlRoot . '/HomeAlone/src/HoalBundle/Resources/intern/',
-                    'menus' => $result));
+                    'menus' => $menus,
+                    'subMenus' => $subMenus));
     }
 
     public function buildMenu($menus, $subMenus) {
-        $listaMenus = array();
+        $listaMenus = [];
 
+        foreach ($menus as $menu) {
+            $item = new Menus();
+            $item->setId($menu->getId());
+            $item->setNome($menu->getNome());
+            $item->setDescricao($menu->getDescricao());
 
-        $listaMenus['id'] = $menus->getId();
-        $listaMenus['nome'] = $menus->getNome();
-        $listaMenus['descricao'] = $menus->getDescricao();
+            $listaMenus[] = $item;
+        }
 
-        echo "<pre>";
-        print_r($listaMenus);
-        echo "</pre>";
-        exit();
+        return $listaMenus;
     }
 
 }

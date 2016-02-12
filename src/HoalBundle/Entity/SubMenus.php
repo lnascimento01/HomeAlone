@@ -109,4 +109,33 @@ class SubMenus
     {
         return $this->id;
     }
+    /**
+     * @var \HoalBundle\Entity\Menus
+     */
+    private $idMenu;
+
+
+    /**
+     * Set idMenu
+     *
+     * @param \HoalBundle\Entity\Menus $idMenu
+     *
+     * @return SubMenus
+     */
+    public function setIdMenu(\HoalBundle\Entity\Menus $idMenu = null)
+    {
+        $this->idMenu = $idMenu;
+
+        return $this;
+    }
+
+    /**
+     * Get idMenu
+     *
+     * @return \HoalBundle\Entity\Menus
+     */
+    public function getIdMenu()
+    {
+        return $this->idMenu;
+    }
 }
