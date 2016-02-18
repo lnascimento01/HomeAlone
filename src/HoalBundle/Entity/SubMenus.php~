@@ -2,8 +2,10 @@
 
 namespace HoalBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * SubMenus
+ * @ORM\Table(name="sub_menus")
  */
 class SubMenus
 {
@@ -108,5 +110,49 @@ class SubMenus
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * @var SubMenus
+     */
+    private $idMenu;
+
+
+    /**
+     * Set id
+     *
+     * @param $id
+     *
+     * @return SubMenus
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+    
+    /**
+     * Set idMenu
+     *
+     * @param $idMenu
+     *
+     * @return SubMenus
+     */
+    public function setIdMenu($idMenu)
+    {
+        $this->idMenu = $idMenu;
+
+        return $this;
+    }
+
+    /**
+     * Get idMenu
+     *
+     * @return SubMenus
+     */
+    public function getIdMenu()
+    {
+        return $this->idMenu;
     }
 }

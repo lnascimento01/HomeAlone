@@ -8,4 +8,4 @@ app:
 
 homepage:
     path: /
-    defaults: { _controller: HoalBundle:Teste:teste }
+    defaults: { _controller: HoalBundle:Home:index }

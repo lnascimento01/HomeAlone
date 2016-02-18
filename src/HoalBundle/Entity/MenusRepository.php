@@ -18,11 +18,11 @@ use Doctrine\ORM\EntityRepository;
 class MenusRepository extends EntityRepository {
 
     public function getMenus() {
-
-        $em = $this->getEntityManager();
-
-        $result = $em->createQuery("SELECT descricao FROM HoalBundle:Menus")->getResult();
-        return  $result;
+//
+//        $em = $this->getEntityManager();
+//
+//        $result = $em->createQuery("SELECT descricao FROM HoalBundle:Menus")->getResult();
+//        return  $result;
     }
 
 }

@@ -1,0 +1,126 @@
+.parallax input[type="checkbox"]:checked ~ label span::after {
+  content: "\e236";
+  color: inherit;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.parallax input[type="checkbox"]:checked ~ .menu {
+  left: -25%;
+}
+.parallax input[type="checkbox"]:checked ~ .content .container {
+  margin-left: 0;
+}
+.parallax label {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  left: inherit;
+  z-index: 999;
+}
+.parallax label span::after {
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  content: "\e014";
+  font-size: 30px;
+  cursor: pointer;
+  color: #da4453;
+}
+.parallax .menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: #25262d;
+  z-index: 9;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.parallax .menu h2 {
+  color: #fff;
+  font-weight: lighter;
+  margin-left: 20px;
+}
+.parallax .menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+.parallax .menu ul li {
+  position: relative;
+}
+.parallax .menu ul li:first-child {
+  margin-left: 20px;
+  color: #555;
+  padding: 10px 0;
+  font-size: 10px;
+}
+.parallax .menu ul li a {
+  display: block;
+  width: 100%;
+  color: #fff;
+  font-weight: lighter;
+  padding: 5px 20px;
+}
+.parallax .menu ul li a.active {
+  background: #1e2025;
+}
+.parallax .menu ul li a.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: #5c9df5;
+}
+.parallax .content .container {
+  width: initial;
+  margin-left: 25%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.parallax .content .container h1 {
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+.parallax .content .container h4 {
+  font-weight: normal;
+  margin: 15px 0;
+}
+.parallax .content .container p {
+  font-weight: lighter;
+  text-align: justify;
+}
+@media (max-width: 767px) {
+  input[type="checkbox"]:checked ~ .menu {
+    left: -100% !important;
+  }
+  input[type="checkbox"]:checked ~ label span {
+    color: inherit;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  label span {
+    color: #fff;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .menu {
+    width: 100% !important;
+  }
+}
+h5 a {
+  color: #fff;
+  position: fixed;
+  background: #3bafda;
+  font-weight: normal;
+  width: 100%;
+  margin: 0;
+  padding: 10px 25px;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+h5 a:hover {
+  color: #fff;
+}

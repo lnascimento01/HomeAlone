@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href={{ root }}bootstrap/css/bootstrap.min.css rel="stylesheet" media="screen" />
+        <link rel="stylesheet" href={{ root }}bootstrap/css/bootstrap.css rel="stylesheet" media="screen" />
+        <link rel="stylesheet" href={{ root }}menu/css/style.css rel="stylesheet" media="screen" />
+        <link rel="stylesheet" href={{ root }}menu/css/normalize.css rel="stylesheet" media="screen" />
+        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css'>
+
+    </head>
+    <body>
+        <div class="page__wrapper">
+            <nav class="page__nav">
+                <ul>
+                    {% for menu in menus %}
+                        {% for subMenu in subMenus %}
+                            {% if subMenu.idMenu == menu.id %}  
+                                <li><a href="#">{{ menu.nome|e }}</a>
+                                    <ul class="nav_sub">  
+                                        <li><a href="/{{ subMenu.nome|lower }}">{{ subMenu.nome}}</a></li>
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li><a href="{{ menu.nome|lower }}" class="menuLink">{{ menu.nome|e }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                </ul>
+            </nav>
+    </body>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src={{ root }}bootstrap/js/bootstrap.min.js></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js'></script>
+    <script src="{{ root }}menu/js/index.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //variables
+            var nav = $(".page__nav");
+            var nav_item = $(".page__nav ul li")
+            var sn = $(".page__nav ul ul");
+            var pc = $(".page__content");
+
+            //get the navigations width and set the "left" for the "dropdown"
+            sn.css("left", nav.width());
+
+            //Bind the different events for the items
+            nav_item.bind("mouseover", open_sub);
+            nav_item.bind("mouseout", close_sub);
+
+            //Open the submenu
+            function open_sub() {
+                var this_offset = $(this).offset().top;
+                $(this).find("ul").css("padding-top", this_offset);
+                $(this).find("ul").css("min-width", "200px");
+            }
+
+            //Close the submenu
+            function close_sub() {
+                $(this).find("ul").css("min-width", "0");
+            }
+        });
+    </script>
+</html>

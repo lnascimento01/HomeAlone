@@ -3,18 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/HomeAlone/app/config/security.yml</file>
-            <file>file:/var/www/html/HomeAlone/src/HoalBundle/Resources/views/Security/login.html.twig</file>
-            <file>file:/var/www/html/HomeAlone/src/HoalBundle/Controller/DefaultController.php</file>
-            <file>file:/var/www/html/HomeAlone/src/HoalBundle/Controller/SecurityController.php</file>
-            <file>file:/var/www/html/HomeAlone/src/HoalBundle/Resources/config/Engines.php</file>
             <file>file:/var/www/html/HomeAlone/src/HoalBundle/Resources/views/Default/teste.html.twig</file>
             <file>file:/var/www/html/HomeAlone/src/HoalBundle/Entity/Menus.php</file>
-            <file>file:/var/www/html/HomeAlone/src/HoalBundle/Entity/Users.php</file>
             <file>file:/var/www/html/HomeAlone/src/HoalBundle/Controller/TesteController.php</file>
+            <file>file:/var/www/html/HomeAlone/src/HoalBundle/Resources/intern/menu/css/style.css</file>
             <file>file:/var/www/html/HomeAlone/src/HoalBundle/Resources/config/routing.yml</file>
             <file>file:/var/www/html/HomeAlone/src/HoalBundle/Entity/SubMenus.php</file>
-            <file>file:/var/www/html/HomeAlone/src/HoalBundle/Entity/UsersRepository.php</file>
         </group>
     </open-files>
 </project-private>
